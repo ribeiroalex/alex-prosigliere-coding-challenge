@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>prosigliere_coding_challenge</RootNamespace>
+    <UserSecretsId>51b30fd7-0f73-410c-905c-fa375937714b</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="prosigliere-coding-challange.Infra\**" />
+    <Compile Remove="prosigliere-coding-challenge.Domain\**" />
+    <Content Remove="prosigliere-coding-challange.Infra\**" />
+    <Content Remove="prosigliere-coding-challenge.Domain\**" />
+    <EmbeddedResource Remove="prosigliere-coding-challange.Infra\**" />
+    <EmbeddedResource Remove="prosigliere-coding-challenge.Domain\**" />
+    <None Remove="prosigliere-coding-challange.Infra\**" />
+    <None Remove="prosigliere-coding-challenge.Domain\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="prosigliere-coding-challange.Infra\prosigliere-coding-challange.Infra.csproj" />
+    <ProjectReference Include="prosigliere-coding-challenge.Domain\prosigliere-coding-challenge.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
